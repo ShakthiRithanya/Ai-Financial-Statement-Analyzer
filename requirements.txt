@@ -1,0 +1,8 @@
+streamlit
+pandas
+numpy
+pdfplumber
+openpyxl
+google-generativeai>=0.5.0
+python-dotenv
+plotly

@@ -265,18 +265,22 @@ st.markdown("""
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         border: 1px solid rgba(212, 175, 55, 0.2);
-        border-radius: 16px;
-        padding: 28px;
+        border-radius: 20px;
+        padding: 40px;
         box-shadow: 0 12px 32px rgba(10, 22, 40, 0.3),
                     inset 0 1px 0 rgba(255, 255, 255, 0.1);
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
     
     .metric-card:hover {
-        transform: translateY(-6px);
+        transform: translateY(-8px);
         background: linear-gradient(135deg, rgba(26, 41, 66, 0.9) 0%, rgba(15, 39, 68, 0.7) 100%);
         border-color: #d4af37;
-        box-shadow: 0 16px 48px rgba(212, 175, 55, 0.2),
+        box-shadow: 0 20px 50px rgba(212, 175, 55, 0.2),
                     inset 0 1px 0 rgba(255, 255, 255, 0.15);
     }
     
@@ -329,7 +333,7 @@ st.markdown("""
     /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
         .title-gradient {
-            font-size: 2.5rem;
+            font-size: 3rem;
         }
         
         .config-box {
@@ -350,18 +354,18 @@ def landing_page():
     
     # Header section
     header_html = """
-    <div style="text-align: center; padding: 80px 40px 60px; position: relative; z-index: 2;">
-        <div style="display: inline-block; padding: 10px 24px; background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(74, 144, 226, 0.1)); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 50px; color: #d4af37; font-size: 0.85rem; font-weight: 700; margin-bottom: 28px; text-transform: uppercase; letter-spacing: 1.5px; backdrop-filter: blur(20px); font-family: 'Montserrat', sans-serif;">
+    <div style="text-align: center; padding: 100px 40px 80px; position: relative; z-index: 2;">
+        <div style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(74, 144, 226, 0.1)); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 50px; color: #d4af37; font-size: 1rem; font-weight: 700; margin-bottom: 32px; text-transform: uppercase; letter-spacing: 2px; backdrop-filter: blur(20px); font-family: 'Montserrat', sans-serif;">
             💎 AI-Powered Financial Intelligence
         </div>
-        <h1 style="font-size: 5rem; font-weight: 900; margin-bottom: 20px; line-height: 1.1; letter-spacing: -2px; font-family: 'Playfair Display', serif;">
+        <h1 style="font-size: 6rem; font-weight: 900; margin-bottom: 30px; line-height: 1.1; letter-spacing: -2px; font-family: 'Playfair Display', serif;">
             <span class="title-gradient">Master Your Financial Narrative</span>
         </h1>
-        <p style="font-size: 1.3rem; color: #b8c5d6; max-width: 900px; margin: 0 auto 50px; line-height: 1.7; font-weight: 400; font-family: 'Inter', sans-serif;">
+        <p style="font-size: 1.6rem; color: #b8c5d6; max-width: 1000px; margin: 0 auto 60px; line-height: 1.7; font-weight: 400; font-family: 'Inter', sans-serif;">
             Transform complex financial reports into actionable insights in seconds. 
             <br><strong style="color: #e8eef5;">AI-powered analysis. Zero spreadsheet chaos.</strong>
         </p>
-        <div style="display: inline-block; padding: 20px 40px; background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(26, 41, 66, 0.6)); border: 1px solid rgba(212, 175, 55, 0.25); border-radius: 12px; color: #d4af37; font-size: 0.85rem; backdrop-filter: blur(20px); font-family: 'Montserrat', sans-serif; font-weight: 600;">
+        <div style="display: inline-block; padding: 24px 48px; background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(26, 41, 66, 0.6)); border: 1px solid rgba(212, 175, 55, 0.25); border-radius: 12px; color: #d4af37; font-size: 1rem; backdrop-filter: blur(20px); font-family: 'Montserrat', sans-serif; font-weight: 600;">
             📊 3-Stage Analysis Pipeline: Extract → Analyze → Predict
         </div>
     </div>
@@ -370,9 +374,9 @@ def landing_page():
 
     # Terminal selection section
     terminal_header = """
-    <div style="margin: 60px 0; position: relative; z-index: 2;">
-        <div style="text-align: center; margin-bottom: 50px;">
-            <h2 style="font-size: 2.2rem; font-weight: 800; color: #ffffff; margin: 0; letter-spacing: -0.5px; font-family: 'Playfair Display', serif;">
+    <div style="margin: 80px 0; position: relative; z-index: 2;">
+        <div style="text-align: center; margin-bottom: 60px;">
+            <h2 style="font-size: 3.5rem; font-weight: 800; color: #ffffff; margin: 0; letter-spacing: -1px; font-family: 'Playfair Display', serif;">
                 Choose Your Analysis Terminal
             </h2>
         </div>
@@ -384,16 +388,18 @@ def landing_page():
     
     with f_col1:
         st.markdown("""
-            <div class="metric-card" style="text-align: center; cursor: pointer; transition: all 0.3s ease;">
-                <div style="font-size: 3.5rem; margin-bottom: 12px;">📄</div>
-                <h3 style="font-size: 1.4rem; color: #ffffff; margin-bottom: 8px; font-weight: 800; font-family: 'Playfair Display', serif;">
-                    Extraction Lab
-                </h3>
-                <p style="color: #b8c5d6; margin: 0; line-height: 1.6; font-size: 0.95rem; font-family: 'Inter', sans-serif;">
-                    Auto-extract and cleanse raw financial data from PDFs, Excel, and CSV with AI-powered normalization.
-                </p>
-                <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(212, 175, 55, 0.2);">
-                    <p style="font-size: 0.85rem; color: #d4af37; font-weight: 700; margin: 0; font-family: 'Montserrat', sans-serif;">PHASE 1 — Foundation</p>
+            <div class="metric-card" style="text-align: center; cursor: pointer;">
+                <div>
+                    <div style="font-size: 5rem; margin-bottom: 24px;">📄</div>
+                    <h3 style="font-size: 1.8rem; color: #ffffff; margin-bottom: 16px; font-weight: 800; font-family: 'Playfair Display', serif;">
+                        Extraction Lab
+                    </h3>
+                    <p style="color: #b8c5d6; margin: 0; line-height: 1.6; font-size: 1.15rem; font-family: 'Inter', sans-serif;">
+                        Auto-extract and cleanse raw financial data from PDFs, Excel, and CSV with AI-powered normalization.
+                    </p>
+                </div>
+                <div style="margin-top: 30px; padding-top: 24px; border-top: 1px solid rgba(212, 175, 55, 0.2);">
+                    <p style="font-size: 1rem; color: #d4af37; font-weight: 700; margin: 0; font-family: 'Montserrat', sans-serif;">PHASE 1 — Foundation</p>
                 </div>
             </div>
         """, unsafe_allow_html=True)
@@ -404,16 +410,18 @@ def landing_page():
     
     with f_col2:
         st.markdown("""
-            <div class="metric-card" style="text-align: center; cursor: pointer; transition: all 0.3s ease;">
-                <div style="font-size: 3.5rem; margin-bottom: 12px;">📊</div>
-                <h3 style="font-size: 1.4rem; color: #ffffff; margin-bottom: 8px; font-weight: 800; font-family: 'Playfair Display', serif;">
-                    Analysis Desk
-                </h3>
-                <p style="color: #b8c5d6; margin: 0; line-height: 1.6; font-size: 0.95rem; font-family: 'Inter', sans-serif;">
-                    Visualize 15+ financial metrics, growth trajectories, and solvency matrices with interactive charts.
-                </p>
-                <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(212, 175, 55, 0.2);">
-                    <p style="font-size: 0.85rem; color: #4a90e2; font-weight: 700; margin: 0; font-family: 'Montserrat', sans-serif;">PHASE 2 — Analysis</p>
+            <div class="metric-card" style="text-align: center; cursor: pointer;">
+                <div>
+                    <div style="font-size: 5rem; margin-bottom: 24px;">📊</div>
+                    <h3 style="font-size: 1.8rem; color: #ffffff; margin-bottom: 16px; font-weight: 800; font-family: 'Playfair Display', serif;">
+                        Analysis Desk
+                    </h3>
+                    <p style="color: #b8c5d6; margin: 0; line-height: 1.6; font-size: 1.15rem; font-family: 'Inter', sans-serif;">
+                        Visualize 15+ financial metrics, growth trajectories, and solvency matrices with interactive charts.
+                    </p>
+                </div>
+                <div style="margin-top: 30px; padding-top: 24px; border-top: 1px solid rgba(212, 175, 55, 0.2);">
+                    <p style="font-size: 1rem; color: #4a90e2; font-weight: 700; margin: 0; font-family: 'Montserrat', sans-serif;">PHASE 2 — Analysis</p>
                 </div>
             </div>
         """, unsafe_allow_html=True)
@@ -424,16 +432,18 @@ def landing_page():
         
     with f_col3:
         st.markdown("""
-            <div class="metric-card" style="text-align: center; cursor: pointer; transition: all 0.3s ease;">
-                <div style="font-size: 3.5rem; margin-bottom: 12px;">🧠</div>
-                <h3 style="font-size: 1.4rem; color: #ffffff; margin-bottom: 8px; font-weight: 800; font-family: 'Playfair Display', serif;">
-                    AI War Room
-                </h3>
-                <p style="color: #b8c5d6; margin: 0; line-height: 1.6; font-size: 0.95rem; font-family: 'Inter', sans-serif;">
-                    Run deep forensic LLM analysis to identify hidden risks, strengths, and investment theses.
-                </p>
-                <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(212, 175, 55, 0.2);">
-                    <p style="font-size: 0.85rem; color: #c5a028; font-weight: 700; margin: 0; font-family: 'Montserrat', sans-serif;">PHASE 3 — Intelligence</p>
+            <div class="metric-card" style="text-align: center; cursor: pointer;">
+                <div>
+                    <div style="font-size: 5rem; margin-bottom: 24px;">🧠</div>
+                    <h3 style="font-size: 1.8rem; color: #ffffff; margin-bottom: 16px; font-weight: 800; font-family: 'Playfair Display', serif;">
+                        AI War Room
+                    </h3>
+                    <p style="color: #b8c5d6; margin: 0; line-height: 1.6; font-size: 1.15rem; font-family: 'Inter', sans-serif;">
+                        Run deep forensic LLM analysis to identify hidden risks, strengths, and investment theses.
+                    </p>
+                </div>
+                <div style="margin-top: 30px; padding-top: 24px; border-top: 1px solid rgba(212, 175, 55, 0.2);">
+                    <p style="font-size: 1rem; color: #c5a028; font-weight: 700; margin: 0; font-family: 'Montserrat', sans-serif;">PHASE 3 — Intelligence</p>
                 </div>
             </div>
         """, unsafe_allow_html=True)
